@@ -6,16 +6,12 @@ from rest_framework.authtoken import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    # --- RUTAS PRINCIPALES ---
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')), 
-    # Esta es la URL de login:
-    path('api-token-auth/', views.obtain_auth_token), 
-]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
     
+    path('api-token-auth/', views.obtain_auth_token), 
+
     # --- RUTAS DE RECUPERACIÓN DE CONTRASEÑA ---
     # 1. Formulario para pedir el correo
     path('reset_password/', 
