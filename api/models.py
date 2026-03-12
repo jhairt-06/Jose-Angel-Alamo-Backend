@@ -27,3 +27,13 @@ class Archivo(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class RegistroInscripcion(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    cedula = models.CharField(max_length=20)
+    archivo_pdf = models.FileField(upload_to='registro-inscripciones/')
+    fecha_subida = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} - {self.cedula}"
