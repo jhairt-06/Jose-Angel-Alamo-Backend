@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from .models import Noticia, Archivo, Categoria
+from .models import Noticia, Archivo, Categoria, RegistroInscripcion
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,3 +31,8 @@ class ArchivoSerializer(serializers.ModelSerializer):
             return f"{size / (1024 * 1024):.1f} MB"
         except:
             return "0 KB"
+
+class RegistroInscripcionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroInscripcion
+        fields = '__all__'
