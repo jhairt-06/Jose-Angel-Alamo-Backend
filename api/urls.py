@@ -13,6 +13,6 @@ router.register(r'registro-inscripciones', RegistroInscripcionViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('registro/', RegistroUsuarioView.as_view(), name='registro_usuario')
+    path('registro/', RegistroUsuarioView.as_view(), name='registro_usuario'),
     path('admin-login/', AdminLoginView.as_view(), name='admin_login')
 ]
